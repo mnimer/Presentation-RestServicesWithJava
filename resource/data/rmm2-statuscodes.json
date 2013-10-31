@@ -1,0 +1,14 @@
+{
+    "title": "Status Codes",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "Status Codes",
+                    "url": "resource/data/template/examples/rmm2/statusCodes.java"
+                }
+            ]
+        }
+    ]
+}

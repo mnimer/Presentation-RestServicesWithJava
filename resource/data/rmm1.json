@@ -1,0 +1,14 @@
+{
+    "title": "RMM Level 1",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "POX Servlet",
+                    "url": "resource/data/template/examples/rmm1/RMM1Servlet.java"
+                }
+            ]
+        }
+    ]
+}

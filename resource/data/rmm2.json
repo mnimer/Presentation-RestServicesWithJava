@@ -1,0 +1,18 @@
+{
+    "title": "REST Services",
+    "sections": [
+        {
+            "title": "Example",
+            "steps": [
+                {
+                    "title": "CRUD",
+                    "url": "resource/data/template/examples/rmm2/crud.java"
+                },
+                {
+                    "title": "Collection",
+                    "url": "resource/data/template/examples/rmm2/collection.java"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "title": "REST Caching",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "ETAG Filter",
+                    "url": "resource/data/template/examples/rmm2/etag-config.xml"
+                },
+                {
+                    "title": "Caching with ETAGS",
+                    "url": "resource/data/template/examples/rmm2/etag.java"
+                },
+                {
+                    "title": "Caching with ehCache",
+                    "url": "resource/data/template/examples/rmm2/caching.java"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "title": "RMM: Level 0",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "Flickr RPC",
+                    "url": "resource/data/template/examples/rmm0/flickr-echo.html"
+                },
+                {
+                    "title": "Flickr SOAP",
+                    "url": "resource/data/template/examples/rmm0/flickr-soap.html"
+                }
+            ]
+        }
+    ]
+}

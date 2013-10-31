@@ -1,0 +1,22 @@
+{
+    "title": "RMM3 Links",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "Links",
+                    "url": "resource/data/template/examples/rmm3/links.html"
+                },
+                {
+                    "title": "Twitter",
+                    "url": "resource/data/template/examples/rmm3/twitter.html"
+                },
+                {
+                    "title": "Netflix",
+                    "url": "resource/data/template/examples/rmm3/netflix.html"
+                }
+            ]
+        }
+    ]
+}

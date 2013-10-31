@@ -1,0 +1,23 @@
+<cfcomponent
+        REST="true"
+        RESTPATH="/userService">
+
+
+    <!---
+    URL ==========================================
+    PUT: http://localhost:8500/userService/user/123
+    --->
+
+
+    <cffunction name="getUser"
+                access="remote">
+
+        <cfscript>
+            // UPDATE USER
+
+            // Send out a message to all clients that the user has be updated
+            wsPublish("wsDemoChannel", "{'message':'USER_CREATED', 'timestamp':'#now().getTime()#'}");
+        </cfscript>
+    </cffunction>
+
+</cfcomponent>

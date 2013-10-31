@@ -1,0 +1,38 @@
+
+ENDPOINT: http://ycpi.api.flickr.com/services/xmlrpc/
+
+REQUEST ==========================================
+<methodCall>
+    <methodName>flickr.test.echo</methodName>
+    <params>
+        <param>
+        <value>
+            <struct>
+                <member>
+                    <name>name</name>
+                    <value><string>value</string></value>
+                </member>
+                <member>
+                    <name>name2</name>
+                    <value><string>value2</string></value>
+                </member>
+            </struct>
+        </value>
+        </param>
+    </params>
+</methodCall>
+
+
+RESPONSE ==========================================
+<?xml version="1.0" encoding="utf-8" ?>
+<methodResponse>
+    <params>
+        <param>
+        <value>
+            <string>
+                [escaped-xml-payload]
+            </string>
+        </value>
+        </param>
+    </params>
+</methodResponse>

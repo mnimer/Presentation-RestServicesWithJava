@@ -1,0 +1,30 @@
+<cfcomponent>
+    <cffunction name="pingRPC"
+                ACCESS="remote"
+                RETURNTYPE="struct">
+
+        <cfscript>
+            var result = structNew();
+            result.status = "ok";
+            result.timeStamp = now();
+            return result;
+        </cfscript>
+    </cffunction>
+</cfcomponent>
+
+
+REQUEST ==========================================
+GET or POST:  http://localhost:8500/servicesinf/Test.cfc?method=pingRPC
+
+
+RESPONSE ==========================================
+<wddxPacket version='1.0'>
+<header/>
+<data>
+<struct><var name='TIMESTAMP'>
+<dateTime>2013-08-29T13:10:22-08:00</dateTime>
+</var><var name='STATUS'>
+<string>ok</string>
+</var></struct>
+</data>
+</wddxPacket>

@@ -1,0 +1,46 @@
+WS Demo <button onclick="clickHandler();">Get User</button>
+
+<div id="msgConsole"></div>
+
+<cfwebsocket
+        name='webSocketObj'
+        onMessage='messageHandler'
+        onError='errorHandler'
+        onOpen='openHandler'
+        subscribeTo='wsDemoChannel'/>
+
+
+<cfoutput>
+    <script>
+        function messageHandler(arg1)
+        {
+            if( arg1.type == "data")
+            {
+                document.getElementById("msgConsole").innerHTML += "<br/>data:\n" +arg1.data;
+            }
+            else
+            {
+                document.getElementById("msgConsole").innerHTML += "<br/>clientId:" +arg1.clientid +"\nmessage:" +arg1.msg +"\ncode:" +arg1.code +"\nmessage:" +arg1.msg  +"\ntype:" +arg1.type +"\nreqType:<b>" +arg1.reqType +"</b>\n ns:" +arg1.ns;
+            }
+        }
+
+        function errorHandler(arg1)
+        {
+            document.getElementById("msgConsole").innerHTML += "<br/>error:\ncode:" +arg1.code +"\nmessage:" +arg1.msg;
+
+        }
+
+        function openHandler(arg1)
+        {
+            document.getElementById("msgConsole").innerHTML += "<br/>socket open";
+        }
+
+
+        function clickHandler()
+        {
+            webSocketObj.invokeAndPublish("wsDemoChannel", "servicesinf.websockets.demo", "getUser");
+
+        }
+
+    </script>
+</cfoutput>

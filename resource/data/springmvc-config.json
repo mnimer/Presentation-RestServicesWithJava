@@ -1,0 +1,18 @@
+{
+    "title": "Spring MVC Configuration",
+    "sections": [
+        {
+            "title": "Example",
+            "steps": [
+                {
+                    "title": "web.xml / servlet",
+                    "url": "resource/data/template/examples/springmvc-config/web.xml"
+                },
+                {
+                    "title": "Servlet XML",
+                    "url": "resource/data/template/examples/springmvc-config/servlet.xml"
+                }
+            ]
+        }
+    ]
+}
