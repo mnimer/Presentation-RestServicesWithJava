@@ -23,11 +23,11 @@ public class StatusCodes
 
 
     @RequestMapping(value="/user", method=POST)
-    public ResponseEntity<User> createUser2(String name, String email)
+    public ResponseEntity<Void> createUser2(String name, String email)
     {
         /// return 409
         User user = someDataObject.createUser(id);
-        return new ResponseEntity<User>(user, HttpStatus.CONFLICT);
+        return new ResponseEntity<Void>(HttpStatus.CONFLICT);
     }
 
 

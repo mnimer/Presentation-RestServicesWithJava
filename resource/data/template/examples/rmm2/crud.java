@@ -26,7 +26,7 @@ public class UserController
     }
 
 
-    // Get a single user
+    // delete a single user
     @RequestMapping(value="/user/{id}", method=RequestMethod.DELETE)
     public ResponseEntity<Void> getUser( @PathVariable("id") String id)
     {
