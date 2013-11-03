@@ -39,7 +39,8 @@
     <p><br/><br/>
         Presented by:<br>
         Mike Nimer<br/>
-        <a href="http://twitter.com/mnimer" target="_blank">@mnimer</a><br/>
+        <a href="http://twitter.com/mnimer" target="_blank">@mnimer</a>
+        <br/><br/>
         <a href="http://mnimer.github.io/ServicesWithJava-Presentation" target="_blank">http://mnimer.github.io/ServicesWithJava-Presentation</a>
     </p>
 
@@ -126,7 +127,7 @@
             </ul>
         </div>
     </div>
-    <h3>Think Services not JSP Pages</h3>
+    <h3>Think Services not JSP/CFM/PHP Pages</h3>
 </section>
 
 
@@ -335,8 +336,6 @@
     </div>
 </section>
 
-<section class="editor" data-source="resource/data/rmm1.json"></section>
-
 
 
 
@@ -375,6 +374,31 @@
 
 
 <section>
+
+    <section>
+        <h2>REST - URL Design</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>URLS represent a resource</li>
+
+                    <li>URLS have implicit hierarchy
+                        <ul><dd><i><br/>
+                            /order/123/products/321<br/>
+                             Product '321' IN Order '123'
+                            <br/></i></dd></ul>
+                    </li>
+
+                    <li>HTTP method determines operation</li>
+                    <li>Verbs are bad</li>
+                    <li>Nouns are good</li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section>
         <h2>REST - URL Design</h2>
 
@@ -399,25 +423,6 @@
         </div>
     </section>
 
-    <section>
-        <h2>REST - URL Design</h2>
-
-        <div style="display: inline-table; width: 816px; height: 418px">
-            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-                <ul>
-                    <li>URLS have implicit hierarchy</li>
-                    <ul>
-                        <li>/order/123/products/321456</li>
-                    </ul>
-                    <li></li>
-
-                    <li>URLS represents a resource</li>
-                    <li>HTTP Method determines operation</li>
-
-                </ul>
-            </div>
-        </div>
-    </section>
 </section>
 
 
@@ -497,10 +502,10 @@
             <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
                 <ul>
                     <li>We Like Spring</li>
-                    <li>Spring Security</li>
-                    <li>Simple & flexible config</li>
+                    <li>Spring Security Integration</li>
+                    <li>Simple & flexible configuration</li>
                     <li>Clear separation of roles</li>
-                    <li>Customizable handler mapping and view resolution</li>
+                    <li>Customizable handler mappings and view resolution</li>
                 </ul>
                 <br/><br/>
                 <a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc">Documentation</a>
@@ -512,16 +517,23 @@
         <img src="resource/image/springmvc.png"/>
     </section>
 
-    <section>
-        <h2>Annotations</h2>
-        <div style="display: inline-table; width: 100%; height: 418px">
-            <div style="display: table-cell; width: 100%; height: 418px; vertical-align: middle;">
-                <ul style="width:800px;">
-                    <li>@Controller</li>
-                    <li>@RequestMapping</li>
-                </ul>
-<div><pre><code>
+</section>
+
+
+
+<section>
+    <h2>Annotations</h2>
+    <div style="display: inline-table; width: 100%; height: 418px">
+        <div style="display: table-cell; width: 100%; height: 418px; vertical-align: middle;">
+            <ul style="width:800px;">
+                <li>@Controller</li>
+                <li>@RequestMapping</li>
+            </ul>
+            <div><pre><code>
+//support "/product/123/details"
 //support "/product/123/details.json"
+//support "/product/123/details.xml"
+
 @Controller
 @RequestMapping("/product")
 public class productExample
@@ -532,12 +544,10 @@ public class productExample
 
     }
 }
-</code></pre></div>
-            </div>
+            </code></pre></div>
         </div>
-    </section>
+    </div>
 </section>
-
 
 
 <section>
@@ -567,6 +577,7 @@ public ModelAndView details( @PathVariable("id") String id )
             <div style="display: table-cell; width: 100%; height: 418px; vertical-align: middle;">
                 <ul style="width:800px;">
                     <li>@RequestParam
+
 <div><pre><code>
 @RequestMapping("/product", method="POST")
 public ModelAndView details(
@@ -577,6 +588,7 @@ public ModelAndView details(
 }
 </code></pre></div>
                             </li>
+                            <li>request="true/false" -- Allows you to define optional arguments in a method</li>
                         </ul>
                     </li>
                 </ul>
@@ -592,7 +604,7 @@ public ModelAndView details(
 <div><pre><code>
 @RequestMapping("/product", method="POST")
 public ModelAndView details(
-    @RequestHeader??
+    @RequestHeader String apiKey
 ){
 
 }
@@ -613,7 +625,7 @@ public ModelAndView details(
 <div><pre><code>
 @RequestMapping("/product", method="POST")
 public ModelAndView details(
-    @CookieValue??
+    @CookieValue String shoppingCart
 ){
 
 }
@@ -644,7 +656,7 @@ public ModelAndView details(
 }
 </code></pre></div>
                     </li>
-                    <li>Lot's More, see documentation</li>
+                    <li>Lot's More, see <a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html#mvc-ann-arguments">documentation</a></li>
                 </ul>
             </div>
         </div>
@@ -684,10 +696,10 @@ public ModelAndView details(
         <div style="display: inline-table; width: 816px; height: 418px">
             <div style="display: table-cell; width: 800px; height: 418px; vertical-align: middle;">
                 <ul>
-                    <li>RequestEntity
+                    <li>ResponseEntity
 <div><pre><code>
     @RequestMapping("/product/{id}", method="GET")
-    public RequestEntity<Product> details(@PathVariable("id") String id)){
+    public ResponseEntity<Product> details(@PathVariable("id") String id)){
         // Object to return
         User user = new User();
         user.setName("");
@@ -734,25 +746,31 @@ public ModelAndView details(
         <a href="http://www.infoq.com/articles/webber-rest-workflow">http://www.infoq.com/articles/webber-rest-workflow</a>
 
         <div style="display: inline-table; width: 816px; height: 418px">
-            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <div style="display: table-cell; width: 800px; height: 418px; vertical-align: middle;font-size:.8em;">
                 <ul>
                     <li>200 = OK, This is what we like to see: everything's fine; let's keep going.</li>
-                    <li>201 = CREATED, We've just created a resource and everything's fine.</li>
+                    <li>201 = CREATED, We've just created a resource and everything's fine.
+                        <ul>
+                            <li>Returns a URL to new item in Location Header</li>
+                        </ul>
+                    </li>
                     <li>202 = ACCEPTED, The service has accepted our request, and invites us to poll a URI in the
                         Location header for the response. Great for <b>asynchronous</b> processing.
+                        <ul>
+                            <li>Returns a URL to check status in Location Header</li>
+                        </ul>
                     </li>
                     <li>204 = NO CONTENT, Sent if the response does not have body.</li>
                     <li>303 = SEE OTHER, We need to interact with a different resource. We're probably still OK.</li>
-
                 </ul>
             </div>
         </div>
     </section>
     <section>
-        <h2>REST Status Codes</h2>
+        <h2>Status Codes</h2>
 
         <div style="display: inline-table; width: 816px; height: 418px">
-            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;font-size:.8em;">
                 <ul>
                     <li>400 = BAD REQUEST, We need to reformat the request and resubmit it.</li>
                     <li>404 = NOT FOUND, The service is far too lazy (or secure) to give us a real reason why our
@@ -771,10 +789,10 @@ public ModelAndView details(
         </div>
     </section>
     <section>
-        <h2>REST Status Codes</h2>
+        <h2>Status Codes</h2>
 
         <div style="display: inline-table; width: 816px; height: 418px">
-            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;font-size:.8em;">
                 <ul>
                     <li>412 = PRECONDITION FAILED, The request wasn't processed because an Etag, If-Match or similar
                         guard header failed evaluation. We need to figure out how to make forward progress.

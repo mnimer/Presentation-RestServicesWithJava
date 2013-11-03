@@ -1,5 +1,5 @@
 {
-    "title": "REST Caching",
+    "title": "Caching",
     "sections": [
         {
             "title": "Examples",
@@ -9,12 +9,16 @@
                     "url": "resource/data/template/examples/rmm2/etag-config.xml"
                 },
                 {
-                    "title": "Caching with ETAGS",
+                    "title": "Last Modified Check",
                     "url": "resource/data/template/examples/rmm2/etag.java"
                 },
                 {
-                    "title": "Caching with ehCache",
+                    "title": "Caching",
                     "url": "resource/data/template/examples/rmm2/caching.java"
+                },
+                {
+                    "title": "Spring Caching Config (ehCache)",
+                    "url": "resource/data/template/examples/rmm2/ehCache-config.xml"
                 }
             ]
         }

@@ -1,22 +1,25 @@
 
 @Controller
 @RequestMapping("/")
-public class Search
+public class LastModifiedCheck
 {
 
     @RequestMapping(value="/item/{id}", method=GET)
-    public RequestEntity<User> getUser(WebRequest webRequest, @PathVariable("id") String id)
+    public RequestEntity<User> getUser(WebRequest request, @PathVariable("id") String id)
     {
         long lastModified = // 1. application-specific calculation
 
-        if (request.checkNotModified(lastModified)) {
-            // 2. shortcut exit - no further processing necessary
+        //Check whether the request qualifies as not modified given the supplied last-modified timestamp (as determined by the application).
+        //This will also transparently set the appropriate response headers, for both the modified case and the not-modified case.
+        if( request.checkNotModified(lastModified) )
+        {
             return null;
         }
 
+
         // 3. or otherwise further request processing, actually preparing content
-        User user = new User(); /
-        return user;
+        User user = new User();
+        return new RequestEntity(user, HttpStatus.OK);
     }
 
 }

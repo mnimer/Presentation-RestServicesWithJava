@@ -11,6 +11,10 @@
                 {
                     "title": "Flickr SOAP",
                     "url": "resource/data/template/examples/rmm0/flickr-soap.html"
+                },
+                {
+                    "title": "POX Servlet",
+                    "url": "resource/data/template/examples/rmm0/RMM0Servlet.java"
                 }
             ]
         }
