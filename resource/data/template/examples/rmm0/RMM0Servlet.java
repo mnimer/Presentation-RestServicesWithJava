@@ -17,7 +17,6 @@ public class Rmm1Servlet extends HttpServlet
         response.setContentType("application/json");
         // Get the printwriter object from response to write the required json object to the output stream
         PrintWriter out = response.getWriter();
-        // Assuming your json object is **jsonObject**, perform the following, it will return your json object
         out.print(jsonObject);
         out.flush();
     }
